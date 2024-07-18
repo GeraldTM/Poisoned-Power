@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c34m5qs68fwja"]
+
+[ext_resource type="PackedScene" uid="uid://drpa3d2e322g0" path="res://assets/scenes/game.tscn" id="1_tp8ai"]
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="2_r5dqk"]
+
+[resource]
+script = ExtResource("2_r5dqk")
+name = "testitem1"
+scene = ExtResource("1_tp8ai")
+flavour_type = "Savoury"
+flavour_value = 2
