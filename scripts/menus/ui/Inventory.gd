@@ -1,12 +1,13 @@
 class_name Crafting_Menu
 
-var _content:Array[Stack] = []
+var contents:Array[Item] = []
 
 func add_item(item:Item):
-	
+	if !contents.has(item):
+		contents.append(item)
 
 func remove_item(item:Item):
-	_content.erase()
+	contents.erase(item)
 
-func get_items() -> Array[Stack]:
-	return _content
+func get_items() -> Array[Item]:
+	return contents

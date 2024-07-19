@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsw6wdf3p3wyk"
-path="res://.godot/imported/tiledfloor.png-eedb4c0123ad7936a89472258961c724.ctex"
+uid="uid://cidsjioum6rpl"
+path="res://.godot/imported/panel-028.png-655ca27000ac60699833ba61044f34d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/tiledfloor.png"
-dest_files=["res://.godot/imported/tiledfloor.png-eedb4c0123ad7936a89472258961c724.ctex"]
+source_file="res://assets/textures/ui/Panel/panel-028.png"
+dest_files=["res://.godot/imported/panel-028.png-655ca27000ac60699833ba61044f34d5.ctex"]
 
 [params]
 

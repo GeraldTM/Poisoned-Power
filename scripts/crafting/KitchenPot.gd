@@ -1,6 +1,6 @@
 extends Area2D
 
-var contents:Meal
+var contents:Meal = Meal.new().add_ingredient(preload("res://assets/data/items/liquid.tres"))
 
 func _ready():
 	pass # Replace with function body.

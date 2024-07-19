@@ -11,5 +11,5 @@ static func get_all_file_paths(path: String) -> Array[String]:
 			file_paths += get_all_file_paths(file_path)  
 		else:  
 			file_paths.append(file_path)  
-		file_name = dir.get_next()  
+		file_name = dir.get_next()
 	return file_paths

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://j5o57i6gr5ky"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_kj5ok"]
+
+[resource]
+script = ExtResource("1_kj5ok")
+name = "Liquid"
+flavour_type = 4
+flavour_value = 0

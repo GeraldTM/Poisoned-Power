@@ -6,9 +6,6 @@ var ingredients:Array[Item]=[]
 var meal_type:String
 var recipes:Array[Recipe] = []
 
-func Meal(type:String):
-	meal_type = type
-
 func add_ingredient(item:Item):
 	ingredients.append(item)
 	if item.get_flavour() == Item.Flavour.other:
