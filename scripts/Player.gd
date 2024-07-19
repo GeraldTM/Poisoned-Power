@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
@@ -16,4 +17,3 @@ func get_input():
 		$Sprite2D.flip_h = true
 	elif velocity.x < 0:
 		$Sprite2D.flip_h = false
-	
