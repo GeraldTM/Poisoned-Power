@@ -1,14 +1,14 @@
 extends Area2D
 
-var contents:Meal = Meal.new().add_ingredient(preload("res://assets/data/items/liquid.tres"))
+var contents:Meal = Meal.new().add_ingredient(preload("res://assets/data/items/heat.tres"))
 
 func _ready():
-	pass # Replace with function body.
+	$Sprite2D.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	%PointLight2D.flicker()
 	
 func _on_body_entered(body):
 	print("entered")

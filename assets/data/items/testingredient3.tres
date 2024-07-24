@@ -7,3 +7,4 @@ script = ExtResource("2_txcnx")
 name = "testitem1"
 flavour_type = 1
 flavour_value = 3
+texture_path = "res://assets/textures/items/testitem3.png"

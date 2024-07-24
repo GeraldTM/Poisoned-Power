@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://o2si8vvqbib7"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_vpejl"]
+
+[resource]
+script = ExtResource("1_vpejl")
+name = "Heat"
+flavour_type = 4
+flavour_value = 0
+texture_path = ""

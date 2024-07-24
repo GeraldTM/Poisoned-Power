@@ -7,17 +7,19 @@ var meal_type:String
 var recipes:Array[Recipe] = []
 
 func add_ingredient(item:Item):
-	ingredients.append(item)
-	if item.get_flavour() == Item.Flavour.other:
-		pass
-	if flavour.size() < 2:
-		flavour.append(item.get_flavour())
-		
-	if flavour.has(item.get_flavour()):
-		flavour_level += item.get_flavour_value()
-	else:
-		@warning_ignore("integer_division")
-		flavour_level -= 1/2*(item.get_flavour_value())
+	if !ingredients.has(item):
+		ingredients.append(item)
+		if item.get_flavour() == Item.Flavour.other:
+			flavour_level += item.get_flavour_value()
+			pass
+		if flavour.size() < 2:
+			flavour.append(item.get_flavour())
+			
+		if flavour.has(item.get_flavour()):
+			flavour_level += item.get_flavour_value()
+		else:
+			@warning_ignore("integer_division")
+			flavour_level -= 1/2*(item.get_flavour_value())
 		
 func get_flavour_level() -> int:
 	return flavour_level

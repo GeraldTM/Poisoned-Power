@@ -4,8 +4,9 @@ extends Resource
 enum Flavour {savoury=0, sweet=1, sour=2, spicy=3, other=4}
 
 @export var name:String
-@export() var flavour_type:Flavour
-@export var flavour_value:int
+@export var flavour_type:Flavour
+@export_range(0,5) var flavour_value:int
+@export_file("*.png") var texture_path:String
 
 func get_item_name() -> String:
 	return name

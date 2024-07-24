@@ -7,3 +7,4 @@ script = ExtResource("2_8oxme")
 name = "testitem2"
 flavour_type = 0
 flavour_value = 5
+texture_path = "res://assets/textures/items/testitem2.png"
