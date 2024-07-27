@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8esrj8obnype"
-path="res://.godot/imported/player-pgart.png-8680f0fb7c84d859ffda1fe98c440ff1.ctex"
+uid="uid://c1nex6wxbe8hf"
+path="res://.godot/imported/Diagonal.png-356ca26798abe0ab8f5ef500742481a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/player-pgart.png"
-dest_files=["res://.godot/imported/player-pgart.png-8680f0fb7c84d859ffda1fe98c440ff1.ctex"]
+source_file="res://addons/UniversalFade/Patterns/Diagonal.png"
+dest_files=["res://.godot/imported/Diagonal.png-356ca26798abe0ab8f5ef500742481a3.ctex"]
 
 [params]
 

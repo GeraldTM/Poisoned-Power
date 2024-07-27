@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_s2cmy")
-name = "grapes"
+name = "Grapes"
 flavour_type = 1
-flavour_value = 4
+flavour_value = 4.0
 texture_path = "res://assets/textures/items/grapes.png"

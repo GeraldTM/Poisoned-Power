@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://camoa6b17xfdi"]
+
+[ext_resource type="Script" path="res://scripts/util/FadeIn.gd" id="1_het72"]
+
+[sub_resource type="Animation" id="Animation_mtuhc"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.00833333, 0.0166667, 0.025, 0.0333333, 0.0416667, 0.05, 0.0583333, 0.0666667, 0.075, 0.0833333, 0.0916667, 0.1, 0.108333, 0.116667, 0.125, 0.133333, 0.141667, 0.15, 0.158333, 0.166667, 0.175, 0.183333, 0.191667, 0.2, 0.208333, 0.216667, 0.225, 0.233333, 0.241667, 0.25, 0.258333, 0.266667, 0.275, 0.283333, 0.291667, 0.3, 0.308333, 0.316667, 0.325, 0.333333, 0.341667, 0.35, 0.358333, 0.366667, 0.375, 0.383333, 0.391667, 0.4, 0.408333, 0.416667, 0.425, 0.433333, 0.441667, 0.45, 0.458333, 0.466667, 0.475, 0.483333, 0.491667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.0166667), Color(0, 0, 0, 0.0333333), Color(0, 0, 0, 0.05), Color(0, 0, 0, 0.0666667), Color(0, 0, 0, 0.0833333), Color(0, 0, 0, 0.1), Color(0, 0, 0, 0.116667), Color(0, 0, 0, 0.133333), Color(0, 0, 0, 0.15), Color(0, 0, 0, 0.166667), Color(0, 0, 0, 0.183333), Color(0, 0, 0, 0.2), Color(0, 0, 0, 0.216667), Color(0, 0, 0, 0.233333), Color(0, 0, 0, 0.25), Color(0, 0, 0, 0.266667), Color(0, 0, 0, 0.283333), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.316667), Color(0, 0, 0, 0.333333), Color(0, 0, 0, 0.35), Color(0, 0, 0, 0.366667), Color(0, 0, 0, 0.383333), Color(0, 0, 0, 0.4), Color(0, 0, 0, 0.416667), Color(0, 0, 0, 0.433333), Color(0, 0, 0, 0.45), Color(0, 0, 0, 0.466667), Color(0, 0, 0, 0.483333), Color(0, 0, 0, 0.5), Color(0, 0, 0, 0.516667), Color(0, 0, 0, 0.533333), Color(0, 0, 0, 0.55), Color(0, 0, 0, 0.566667), Color(0, 0, 0, 0.583333), Color(0, 0, 0, 0.6), Color(0, 0, 0, 0.616667), Color(0, 0, 0, 0.633333), Color(0, 0, 0, 0.65), Color(0, 0, 0, 0.666667), Color(0, 0, 0, 0.683333), Color(0, 0, 0, 0.7), Color(0, 0, 0, 0.716667), Color(0, 0, 0, 0.733333), Color(0, 0, 0, 0.75), Color(0, 0, 0, 0.766667), Color(0, 0, 0, 0.783333), Color(0, 0, 0, 0.8), Color(0, 0, 0, 0.816667), Color(0, 0, 0, 0.833333), Color(0, 0, 0, 0.85), Color(0, 0, 0, 0.866667), Color(0, 0, 0, 0.883333), Color(0, 0, 0, 0.9), Color(0, 0, 0, 0.916667), Color(0, 0, 0, 0.933333), Color(0, 0, 0, 0.95), Color(0, 0, 0, 0.966667), Color(0, 0, 0, 0.983333), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vfany"]
+_data = {
+"fade_out": SubResource("Animation_mtuhc")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="CanvasModulate" type="ColorRect" parent="."]
+top_level = true
+visibility_layer = 524288
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate"]
+libraries = {
+"": SubResource("AnimationLibrary_vfany")
+}
+autoplay = "fade_out"
+script = ExtResource("1_het72")
+
+[connection signal="animation_finished" from="CanvasModulate/AnimationPlayer" to="CanvasModulate/AnimationPlayer" method="_on_animation_finished"]

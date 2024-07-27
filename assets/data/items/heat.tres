@@ -6,5 +6,5 @@
 script = ExtResource("1_vpejl")
 name = "Heat"
 flavour_type = 4
-flavour_value = 0
+flavour_value = 0.0
 texture_path = ""

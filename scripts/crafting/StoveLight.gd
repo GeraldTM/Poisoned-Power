@@ -3,7 +3,6 @@ extends PointLight2D
 @export_range(0,1) var flicker_variation: float
 @export_range(0,5) var flicker_base: float
 @export_range(0,1) var flicker_speed:float
-
 var target_energy:float
 
 

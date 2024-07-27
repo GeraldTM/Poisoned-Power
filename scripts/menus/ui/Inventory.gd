@@ -8,22 +8,33 @@ var mouse_placement_valid:bool = false
 var dragging:bool = false
 var current_instance:RigidBody2D
 var current_instance_index:int
+var in_stove:bool = false
+var in_pot:bool = false
+
+
 
 func _ready():
-	add_inv_item(preload("res://assets/data/items/red_mushroom.tres"))
-	add_inv_item(preload("res://assets/data/items/grapes.tres"))
-	add_inv_item(preload("res://assets/data/items/cherries.tres"))
+	for item in %Items.get_children():
+		item.item_clicked.connect(_on_item_clicked)
 
+func _process(_delta):
 
-func _process(delta):
 	if mouse_placement_valid && Input.is_action_just_released("mouse_click") && dragging:
+		
 		dragging = false
-		print("debug ")
-		current_instance.follow_mouse = false
-		remove_inv_item(contents[current_instance_index])
-		current_instance.item_clicked.connect(_on_item_clicked)
+		if in_pot:
+			%KitchenPot.add_ingredient(current_instance.item)
+			current_instance.queue_free()
+		elif in_stove:
+			%Stove.add_ingredient(current_instance.item)
+			current_instance.queue_free()
+		else:
+			remove_inv_item(contents[current_instance_index])
+			current_instance.item_clicked.connect(_on_item_clicked)
+			current_instance.follow_mouse = false
 		for i in contents.size():
 			set_item_disabled(i,false)
+		deselect_all()
 
 func add_inv_item(item:Item):
 	if contents.size() >= 5:
@@ -50,6 +61,7 @@ func _on_item_selected(index):
 		if i != index:
 			set_item_disabled(i,true)
 	var instance = world_item.instantiate()
+	instance.follow_mouse = true
 	instance.set_item(contents[index])
 	%Items.add_child(instance)
 	current_instance = instance
@@ -64,3 +76,19 @@ func _on_valid_item_placement_area_mouse_entered():
 
 func _on_valid_item_placement_area_mouse_exited():
 	mouse_placement_valid = false
+
+
+func _on_kitchen_pot_mouse_entered():
+	in_pot = true
+
+
+func _on_kitchen_pot_mouse_exited():
+	in_pot = false
+
+
+func _on_stove_mouse_entered():
+	in_stove = true
+
+
+func _on_stove_mouse_exited():
+	in_stove = false

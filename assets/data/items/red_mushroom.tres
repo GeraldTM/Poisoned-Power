@@ -6,5 +6,5 @@
 script = ExtResource("1_mgum3")
 name = "Red Mushroom"
 flavour_type = 3
-flavour_value = 0
+flavour_value = 1.0
 texture_path = "res://assets/textures/items/mushroom_red.png"

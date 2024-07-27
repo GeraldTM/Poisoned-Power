@@ -6,5 +6,5 @@
 script = ExtResource("1_csgll")
 name = "Cherries"
 flavour_type = 1
-flavour_value = 3
+flavour_value = 3.0
 texture_path = "res://assets/textures/items/cherries.png"

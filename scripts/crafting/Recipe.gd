@@ -2,6 +2,7 @@ class_name Recipe
 extends Resource
 
 @export var ingredients:Array[Item] = []
+@export var effect:String
 
 static func get_recipes() -> Array[Recipe]:
 	var recipies:Array[Recipe] = []
