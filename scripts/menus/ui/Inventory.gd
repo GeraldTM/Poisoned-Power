@@ -18,7 +18,11 @@ func _ready():
 		item.item_clicked.connect(_on_item_clicked)
 
 func _process(_delta):
-
+	if %UI.has_node("./TextBox"):
+		hide()
+	else:
+		show()
+	
 	if mouse_placement_valid && Input.is_action_just_released("mouse_click") && dragging:
 		
 		dragging = false

@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjch1if4f5a5d"]
+
+[ext_resource type="Texture2D" uid="uid://nqx35xavseq8" path="res://assets/textures/ui/Panel/panel-031.png" id="1_epyqi"]
+[ext_resource type="Texture2D" uid="uid://gudvxg7dlltc" path="res://assets/textures/master_chef.png" id="2_jwywg"]
+[ext_resource type="Script" path="res://scripts/menus/dialogue/TextBox.gd" id="2_kocew"]
+[ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="3_nctei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34ntp"]
+atlas = ExtResource("1_epyqi")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4po8k"]
+texture = SubResource("AtlasTexture_34ntp")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="Theme" id="Theme_lgs2j"]
+Panel/styles/panel = SubResource("StyleBoxTexture_4po8k")
+
+[sub_resource type="Theme" id="Theme_fjiqr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2k5p"]
+atlas = ExtResource("2_jwywg")
+region = Rect2(0, 144, 12, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q44dw"]
+font = ExtResource("3_nctei")
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_7hrmp"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_766pl"]
+
+[node name="TextBox" type="HBoxContainer"]
+texture_filter = 1
+layout_direction = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -537.0
+offset_top = -330.0
+offset_bottom = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_lgs2j")
+script = ExtResource("2_kocew")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(147, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_fjiqr")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 18.0
+offset_right = 36.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_a2k5p")
+stretch_mode = 4
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_q44dw")
+autowrap_mode = 3
+
+[node name="LinkButton" type="LinkButton" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -69.0
+offset_top = -29.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_7hrmp")
+theme_override_fonts/font = ExtResource("3_nctei")
+theme_override_styles/focus = SubResource("StyleBoxLine_766pl")
+text = "Next ->"
+underline = 1
+
+[connection signal="pressed" from="Panel2/LinkButton" to="." method="_on_link_button_pressed"]

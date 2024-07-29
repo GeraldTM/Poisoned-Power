@@ -16,9 +16,13 @@ func _process(delta):
 		meal_taken.emit()
 		test_food(contents)
 		satisfaction += 100
-		print("MMmMMMMMmMMMMMMmMMMmM")
+		var message = "MMmMMMMMmMMMMMMmMMMmM "
 		if dead:
-			print(contents.get_used_recipe().effect, "!")
+			message += contents.get_used_recipe().effect + "!"
+		var dialogue = preload("res://assets/scenes/dialogue.tscn").instantiate()
+		$"../UI".add_child(dialogue)
+		print(dialogue.get_path_to(get_parent()))
+		dialogue.new_dialogue(load("res://assets/textures/environment/the_birb.png"), message)
 
 func _on_body_entered(body):
 	if body == %Player && %Player.meal != null:

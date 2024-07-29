@@ -11808,6 +11808,7 @@ position = Vector2(-10, 14.5)
 polygon = PackedVector2Array(0, -7, -5, -2.5, -5, 2.25, 5, 2.25, 5, -2.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="Inventory" type="GridContainer" parent="UI"]
 unique_name_in_owner = true
@@ -11951,6 +11952,10 @@ flicker_speed = 0.231
 [node name="Sprite2D2" type="Sprite2D" parent="Environment"]
 position = Vector2(-274, -35)
 texture = ExtResource("18_tqif6")
+
+[node name="Glass" type="Sprite2D" parent="Environment"]
+position = Vector2(-290, -29)
+texture = ExtResource("38_f5g43")
 
 [node name="Stove" type="Area2D" parent="."]
 unique_name_in_owner = true
@@ -12202,10 +12207,6 @@ script = ExtResource("28_w6f5n")
 day_time = 60.0
 
 [node name="Timer" type="Timer" parent="Time"]
-
-[node name="Glass" type="Sprite2D" parent="."]
-position = Vector2(-290, -29)
-texture = ExtResource("38_f5g43")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-729, 0)
