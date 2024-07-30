@@ -1,4 +1,4 @@
-extends "res://assets/scenes/FoodTaster.gd"
+extends FoodTaster
 
 var is_player_entered:bool
 var contents:Meal

@@ -1,3 +1,5 @@
+class_name FoodTaster
+
 extends Area2D
 
 var flavour_tollerances:Array = [0,0,0,0,0]

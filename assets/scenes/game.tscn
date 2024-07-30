@@ -1,6 +1,6 @@
 [gd_scene load_steps=104 format=3 uid="uid://drpa3d2e322g0"]
 
-[ext_resource type="Script" path="res://scripts/Node2D.gd" id="1_a07p7"]
+[ext_resource type="Script" path="res://scripts/util/Node2D.gd" id="1_a07p7"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_grpak"]
 [ext_resource type="Texture2D" uid="uid://b0u7owyjynmwi" path="res://assets/textures/player_walking.png" id="3_vve8o"]
 [ext_resource type="Texture2D" uid="uid://bmj0pi1nctcsb" path="res://assets/textures/player.png" id="3_w0esk"]
@@ -14,14 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://drg6tiqmgu4ra" path="res://assets/textures/environment/2d_lights_and_shadows_neutral_point_light.webp" id="9_k771r"]
 [ext_resource type="Texture2D" uid="uid://b7as5mvfkuhad" path="res://assets/textures/floor_craked.png" id="9_rbdw8"]
 [ext_resource type="Texture2D" uid="uid://bqv8ste2u05h" path="res://assets/textures/ui/Transparent center/panel-transparent-center-002.png" id="9_toib6"]
-[ext_resource type="Script" path="res://assets/scenes/CanvasModulate.gd" id="10_7ws12"]
+[ext_resource type="Script" path="res://scripts/util/CanvasModulate.gd" id="10_7ws12"]
 [ext_resource type="Script" path="res://scripts/environment/EnvLight.gd" id="10_lalw4"]
 [ext_resource type="Script" path="res://scripts/crafting/Stove.gd" id="10_oh8jd"]
 [ext_resource type="Script" path="res://scripts/menus/ui/Inventory.gd" id="10_snpd6"]
 [ext_resource type="Script" path="res://scripts/crafting/StoveLight.gd" id="11_6lxec"]
 [ext_resource type="Texture2D" uid="uid://bgsllcwpy3vjp" path="res://assets/textures/environment/torch.png" id="13_7uas0"]
 [ext_resource type="Texture2D" uid="uid://k2v1spu6aoqe" path="res://assets/textures/environment/windows.png" id="13_884gl"]
-[ext_resource type="Script" path="res://assets/scenes/Torch.gd" id="14_3fhpp"]
+[ext_resource type="Script" path="res://scripts/environment/Torch.gd" id="14_3fhpp"]
 [ext_resource type="SpriteFrames" uid="uid://jg18mn6b5s30" path="res://assets/scenes/stoveanimation.tres" id="15_tojg4"]
 [ext_resource type="Texture2D" uid="uid://0bw5jvdyjgjt" path="res://assets/textures/environment/door.png" id="17_5jav1"]
 [ext_resource type="Texture2D" uid="uid://cqh27fbgmytuq" path="res://assets/textures/environment/flower_pot.png" id="18_tqif6"]
@@ -35,13 +35,13 @@
 [ext_resource type="Resource" uid="uid://d1xvhganakee4" path="res://assets/data/items/grapes.tres" id="24_nlm6i"]
 [ext_resource type="Texture2D" uid="uid://dqtr4khgoxiao" path="res://assets/textures/environment/pedastal.png" id="25_5m2oa"]
 [ext_resource type="Resource" uid="uid://ck7hjuysnlw01" path="res://assets/data/items/orange_mushroom.tres" id="25_amfqk"]
-[ext_resource type="Script" path="res://assets/scenes/Pedastal.gd" id="25_tolic"]
-[ext_resource type="Script" path="res://assets/scenes/TheBirb.gd" id="28_r27vi"]
+[ext_resource type="Script" path="res://scripts/environment/Pedastal.gd" id="25_tolic"]
+[ext_resource type="Script" path="res://scripts/TheBirb.gd" id="28_r27vi"]
 [ext_resource type="Script" path="res://scripts/util/Time.gd" id="28_w6f5n"]
 [ext_resource type="Texture2D" uid="uid://c4ajocdr3sx8y" path="res://assets/textures/environment/birdcage.png" id="29_2rx0n"]
 [ext_resource type="Texture2D" uid="uid://crk1acajlepk2" path="res://assets/textures/environment/glass.png" id="38_f5g43"]
 [ext_resource type="Texture2D" uid="uid://gudvxg7dlltc" path="res://assets/textures/master_chef.png" id="41_4840r"]
-[ext_resource type="Script" path="res://assets/scenes/MasterChef.gd" id="41_emg1d"]
+[ext_resource type="Script" path="res://scripts/MasterChef.gd" id="41_emg1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opn3x"]
 atlas = ExtResource("3_vve8o")
@@ -11765,7 +11765,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lvqhr"]
 size = Vector2(25, 39)
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 texture_filter = 1
 position = Vector2(-1, -1)
 script = ExtResource("1_a07p7")
@@ -11864,7 +11864,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_1weth")
 centered = false
 region_enabled = true
-region_rect = Rect2(-0.325, -0.266, 16384, 300)
+region_rect = Rect2(0, 0, 16384, 300)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Background/ParallaxBackground"]
 scale = Vector2(1, 0.997222)
@@ -12213,7 +12213,8 @@ position = Vector2(-729, 0)
 curve = SubResource("Curve2D_mr3kh")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1, -1)
+position = Vector2(221.865, -1)
+progress = 220.864
 
 [node name="MasterChef" type="RigidBody2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-1, 1)

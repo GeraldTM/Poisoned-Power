@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=3 uid="uid://cinhb13tfckti"]
+
+[ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="1_58xeb"]
+[ext_resource type="Texture2D" uid="uid://nqx35xavseq8" path="res://assets/textures/ui/Panel/panel-031.png" id="1_xwuo8"]
+[ext_resource type="Texture2D" uid="uid://ch2lt8572u4tv" path="res://assets/textures/ui/Border/panel-border-010.png" id="2_40uo3"]
+[ext_resource type="Script" path="res://scripts/story_page.gd" id="2_ng3ek"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aome"]
+atlas = ExtResource("1_xwuo8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ic52"]
+texture = SubResource("AtlasTexture_4aome")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[sub_resource type="Theme" id="Theme_e5qr1"]
+Panel/styles/panel = SubResource("StyleBoxTexture_2ic52")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glnpy"]
+atlas = ExtResource("2_40uo3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t2bcv"]
+texture = SubResource("AtlasTexture_glnpy")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+
+[sub_resource type="Theme" id="Theme_foye7"]
+
+[node name="StoryPage" type="Panel"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -960.0
+offset_bottom = -540.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_e5qr1")
+script = ExtResource("2_ng3ek")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_t2bcv")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_58xeb")
+theme_override_font_sizes/font_size = 40
+text = "This is a Test of a story dialouge scene: it is here like this and is doing fine: it can be used for endings and the prologue and shit, so it should only be seen at the end or begining of the game. btw, if anyone other than the dev is seeing this text, please report it as a bug or continue playing pretending this was an informative piece of lore."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -62.0
+offset_right = 56.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_foye7")
+theme_override_fonts/font = ExtResource("1_58xeb")
+theme_override_font_sizes/font_size = 50
+text = "Next"
+underline = 1
