@@ -15,9 +15,13 @@ universal_fade/patterns_directory="res://addons/UniversalFade/Patterns"
 [application]
 
 config/name="PirateSoftware-Gamejam-15"
-run/main_scene="res://assets/scenes/main.tscn"
+run/main_scene="res://assets/scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Main="*res://scripts/Main.gd"
 
 [display]
 
@@ -25,7 +29,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 window/vsync/vsync_mode=2
 
 [input]

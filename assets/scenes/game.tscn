@@ -1,6 +1,6 @@
-[gd_scene load_steps=104 format=3 uid="uid://drpa3d2e322g0"]
+[gd_scene load_steps=105 format=3 uid="uid://drpa3d2e322g0"]
 
-[ext_resource type="Script" path="res://scripts/util/Node2D.gd" id="1_a07p7"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_xx0jj"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_grpak"]
 [ext_resource type="Texture2D" uid="uid://b0u7owyjynmwi" path="res://assets/textures/player_walking.png" id="3_vve8o"]
 [ext_resource type="Texture2D" uid="uid://bmj0pi1nctcsb" path="res://assets/textures/player.png" id="3_w0esk"]
@@ -40,8 +40,8 @@
 [ext_resource type="Script" path="res://scripts/util/Time.gd" id="28_w6f5n"]
 [ext_resource type="Texture2D" uid="uid://c4ajocdr3sx8y" path="res://assets/textures/environment/birdcage.png" id="29_2rx0n"]
 [ext_resource type="Texture2D" uid="uid://crk1acajlepk2" path="res://assets/textures/environment/glass.png" id="38_f5g43"]
+[ext_resource type="Script" path="res://assets/scenes/PathFollow2D.gd" id="41_4kj4v"]
 [ext_resource type="Texture2D" uid="uid://gudvxg7dlltc" path="res://assets/textures/master_chef.png" id="41_4840r"]
-[ext_resource type="Script" path="res://scripts/MasterChef.gd" id="41_emg1d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opn3x"]
 atlas = ExtResource("3_vve8o")
@@ -11604,6 +11604,9 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_i5i82")
 sources/0 = SubResource("TileSetAtlasSource_6bdds")
 sources/1 = SubResource("TileSetAtlasSource_pl2wt")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34xeu"]
+size = Vector2(48, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_73ks5"]
 atlas = ExtResource("17_5jav1")
 region = Rect2(96, 0, 32, 32)
@@ -11674,7 +11677,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjfxw"]
-size = Vector2(38.5, 64)
+size = Vector2(88, 64)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g2fei"]
 normal = Vector2(-1, 0)
@@ -11768,7 +11771,7 @@ size = Vector2(25, 39)
 [node name="Game" type="Node2D"]
 texture_filter = 1
 position = Vector2(-1, -1)
-script = ExtResource("1_a07p7")
+script = ExtResource("1_xx0jj")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
@@ -12073,9 +12076,6 @@ position = Vector2(10, -19)
 scale = Vector2(2, 2)
 texture = ExtResource("21_r00iy")
 
-[node name="Timer" type="Timer" parent="Bed"]
-one_shot = true
-
 [node name="Pedastal" type="Area2D" parent="."]
 collision_layer = 32
 collision_mask = 18
@@ -12153,13 +12153,21 @@ item = ExtResource("24_nlm6i")
 position = Vector2(-54.93, -17.63)
 item = ExtResource("25_amfqk")
 
+[node name="Door Area" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door Area"]
+position = Vector2(-424, -32)
+shape = SubResource("RectangleShape2D_34xeu")
+
 [node name="Door" type="StaticBody2D" parent="."]
 collision_mask = 51
 script = ExtResource("22_ad63v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door"]
 texture_filter = 1
-position = Vector2(-407, -32)
+position = Vector2(-406, -33)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bxx8p")
 animation = &"close"
@@ -12168,7 +12176,7 @@ frame_progress = 1.0
 speed_scale = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(-444.75, -32)
+position = Vector2(-468, -32)
 shape = SubResource("RectangleShape2D_mjfxw")
 
 [node name="WorldEdges" type="StaticBody2D" parent="."]
@@ -12204,23 +12212,24 @@ unique_name_in_owner = true
 one_shot = true
 autostart = true
 script = ExtResource("28_w6f5n")
-day_time = 60.0
-
-[node name="Timer" type="Timer" parent="Time"]
+day_time = 120.0
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-729, 0)
 curve = SubResource("Curve2D_mr3kh")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(221.865, -1)
-progress = 220.864
+unique_name_in_owner = true
+position = Vector2(233.842, -1)
+progress = 232.841
+loop = false
+script = ExtResource("41_4kj4v")
+multiplier = 0.1
 
-[node name="MasterChef" type="RigidBody2D" parent="Path2D/PathFollow2D"]
+[node name="MasterChef" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
 position = Vector2(-1, 1)
 collision_layer = 32
-collision_mask = 0
-script = ExtResource("41_emg1d")
+collision_mask = 64
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/MasterChef"]
 position = Vector2(0, -20)
@@ -12257,6 +12266,8 @@ shape = SubResource("RectangleShape2D_lvqhr")
 [connection signal="body_entered" from="TheBirb" to="TheBirb" method="_on_body_entered"]
 [connection signal="body_exited" from="TheBirb" to="TheBirb" method="_on_body_exited"]
 [connection signal="meal_taken" from="TheBirb" to="Player" method="_on_the_birb_meal_taken"]
+[connection signal="body_entered" from="Door Area" to="Door" method="_on_door_area_body_entered"]
+[connection signal="body_exited" from="Door Area" to="Door" method="_on_door_area_body_exited"]
 [connection signal="mouse_entered" from="ValidItemPlacementArea" to="UI/Inventory/ItemList" method="_on_valid_item_placement_area_mouse_entered"]
 [connection signal="mouse_exited" from="ValidItemPlacementArea" to="UI/Inventory/ItemList" method="_on_valid_item_placement_area_mouse_exited"]
 [connection signal="timeout" from="Time" to="Time" method="_on_timeout"]

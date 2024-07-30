@@ -14,7 +14,7 @@ func _process(_delta):
 
 
 func _on_timeout():
-	day += 1
+	Main.bad_ending("You forgot your bedtime!!!\n The guards found you with an only slightly suspicious book titled: A Noob's Guide to Poisoning. They Took you to the King, who, in a fit of rage, executed you imediately... \n Guess you shoulda listened to your mom about bedtimes... Whoops!")
 
 func get_time() -> float:
 	return wait_time - time_left

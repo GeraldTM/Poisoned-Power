@@ -20,8 +20,7 @@ func _process(delta):
 		if dead:
 			message += contents.get_used_recipe().effect + "!"
 		var dialogue = preload("res://assets/scenes/dialogue.tscn").instantiate()
-		$"../UI".add_child(dialogue)
-		print(dialogue.get_path_to(get_parent()))
+		%UI.add_child(dialogue)
 		dialogue.new_dialogue(load("res://assets/textures/environment/the_birb.png"), message)
 
 func _on_body_entered(body):

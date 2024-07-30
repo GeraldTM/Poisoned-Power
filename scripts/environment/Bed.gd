@@ -15,22 +15,20 @@ func _process(delta):
 		$Hover.hide()
 	if can_sleep && Input.is_action_just_pressed("intreract"):
 		faded = true
-		fader = Fade.fade_out($Timer.wait_time)
-		fader.finished.connect(_on_fade_finished)
+		%Time.stop()
+		await Fade.fade_out().finished
 		%Time.start()
 		%Time.wait_time = %Time.day_time
+		%Time.day += 1
+		Fade.fade_in()
 
 
 
 func _on_body_entered(body):
-	if body == %Player && %Time.time_ratio >= 0.7: 
+	if body == %Player: 
 		can_sleep = true
 
 
 func _on_body_exited(body):
 	if body == %Player: 
 		can_sleep = false
-
-func  _on_fade_finished():
-	if faded:
-		fader.fade_in($Timer.wait_time)

@@ -1,3 +1,2 @@
-extends RigidBody2D
-
+extends AnimatableBody2D
 

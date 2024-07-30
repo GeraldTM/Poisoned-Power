@@ -11,7 +11,7 @@ var current_instance_index:int
 var in_stove:bool = false
 var in_pot:bool = false
 
-
+var frame = 0
 
 func _ready():
 	for item in %Items.get_children():
@@ -20,8 +20,11 @@ func _ready():
 func _process(_delta):
 	if %UI.has_node("./TextBox"):
 		hide()
+		frame = 0
 	else:
-		show()
+		if frame == 5:
+			show()
+		frame +=1
 	
 	if mouse_placement_valid && Input.is_action_just_released("mouse_click") && dragging:
 		

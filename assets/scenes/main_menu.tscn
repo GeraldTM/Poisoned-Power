@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfbvo5naaoasa"]
+[gd_scene load_steps=10 format=3 uid="uid://cfbvo5naaoasa"]
 
-[ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_avu4b"]
 [ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="1_rub2n"]
 [ext_resource type="Script" path="res://scripts/menus/Exit.gd" id="2_1llhg"]
+[ext_resource type="Script" path="res://assets/scenes/Start.gd" id="2_tbe4q"]
 [ext_resource type="Script" path="res://scripts/util/ParallaxBackground.gd" id="3_hb75b"]
 [ext_resource type="Texture2D" uid="uid://c23q5fcrwtv7m" path="res://assets/textures/environment/exterior-parallaxBG1.png" id="3_pvwf1"]
 [ext_resource type="Texture2D" uid="uid://cp46rcodsa73f" path="res://assets/textures/environment/exterior-parallaxBG2.png" id="4_6fbj0"]
+
+[sub_resource type="GDScript" id="GDScript_6ymms"]
 
 [sub_resource type="Theme" id="Theme_aly63"]
 
@@ -14,7 +16,7 @@ atlas = ExtResource("3_pvwf1")
 region = Rect2(0, 0, 512, 300)
 
 [node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_avu4b")
+script = SubResource("GDScript_6ymms")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -34,13 +36,14 @@ theme_override_fonts/font = ExtResource("1_rub2n")
 theme_override_font_sizes/font_size = 100
 text = "Poison Craft"
 
-[node name="StartGame" type="LinkButton" parent="VBoxContainer"]
+[node name="Start" type="LinkButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rub2n")
 theme_override_font_sizes/font_size = 75
 text = "Start"
 underline = 1
+script = ExtResource("2_tbe4q")
 
 [node name="Exit" type="LinkButton" parent="VBoxContainer"]
 layout_mode = 2
@@ -78,5 +81,5 @@ position = Vector2(1021, 613)
 scale = Vector2(4, 4)
 texture = ExtResource("4_6fbj0")
 
-[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]

@@ -20,5 +20,9 @@ func test_food(meal:Meal):
 	
 	for flavour in meal.flavour:
 		satisfaction += meal.flavour_level / (flavour_tollerances[flavour])/2
+		
 	if meal.contains_recipe():
+		print(meal.get_used_recipe().effect)
 		dead = true
+	
+	print(dead)

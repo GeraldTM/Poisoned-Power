@@ -9,3 +9,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+
+
+func _on_door_area_body_entered(body):
+	print("opening")
+	$AnimatedSprite2D.play("open")
+
+
+func _on_door_area_body_exited(body):
+	print("closing")
+	$AnimatedSprite2D.play("close")
+
