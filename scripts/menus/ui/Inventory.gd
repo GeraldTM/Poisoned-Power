@@ -46,10 +46,20 @@ func _process(_delta):
 func add_inv_item(item:Item):
 	if contents.size() >= 5:
 		while contents.size() > 4:
-			remove_inv_item(contents.front())
+			remove_and_place(contents.front())
 	if !contents.has(item):
 		contents.append(item)
 		add_icon_item(load(item.texture_path))
+
+func remove_and_place(item:Item):
+	var instance = world_item.instantiate()
+	instance.set_item(item)
+	%Items.add_child(instance)
+	instance.position = Vector2(%Player.global_position.x, -7)
+	remove_inv_item(item)
+	instance.item_clicked.connect(_on_item_clicked)
+	
+
 
 func remove_inv_item(item:Item):
 	

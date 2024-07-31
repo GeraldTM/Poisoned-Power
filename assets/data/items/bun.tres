@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://x18ynkbmsqqt"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_12os6"]
+
+[resource]
+script = ExtResource("1_12os6")
+name = "Bun"
+flavour_type = 0
+flavour_value = 5.0
+texture_path = "res://assets/textures/items/bun.png"

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export_range(0,255) var speed:int
 var meal:Meal
-
+var suspicion:float
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,6 +13,7 @@ func _ready():
 func _process(_delta):
 	get_input()
 	move_and_slide()
+	
 
 func get_input():
 	velocity.x =  Input.get_vector("left", "right", "up", "down").x * speed
@@ -44,3 +45,11 @@ func _on_pedastal_meal_taken():
 
 func _on_the_birb_meal_taken():
 	$Sprite2D2.hide()
+
+
+func _on_path_follow_2d_poison_used(recipe):
+	recipe.suspicion += 1
+	suspicion += recipe.suspicion
+	print(suspicion)
+	if suspicion >= 4:
+		Main.bad_ending("You drew too much suspicion, and were caught by the royal guard... The alchemist's cult was disbanded and it's secrets stolen. Good job")

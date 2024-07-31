@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d064afxwr0j3u"
-path="res://.godot/imported/DungeonPlatformerAssetPackV1.31.png-69af4cfcb957a063b78fc782b9da1f43.ctex"
+uid="uid://obbbtj030uej"
+path="res://.godot/imported/DungeonPlatformerAssetPackV1.39.png-595909d8c4e6e211702be8cbece31b93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/DungeonPlatformerAssetPackV1.31.png"
-dest_files=["res://.godot/imported/DungeonPlatformerAssetPackV1.31.png-69af4cfcb957a063b78fc782b9da1f43.ctex"]
+source_file="res://assets/textures/DungeonPlatformerAssetPackV1.39.png"
+dest_files=["res://.godot/imported/DungeonPlatformerAssetPackV1.39.png-595909d8c4e6e211702be8cbece31b93.ctex"]
 
 [params]
 

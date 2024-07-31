@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://6qc5nonqwos"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_fpq6o"]
+
+[resource]
+script = ExtResource("1_fpq6o")
+name = "Green Mushroom"
+flavour_type = 2
+flavour_value = 1.75
+texture_path = "res://assets/textures/items/mushroom_green.png"

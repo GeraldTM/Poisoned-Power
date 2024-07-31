@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfbvo5naaoasa"]
+[gd_scene load_steps=11 format=3 uid="uid://cfbvo5naaoasa"]
 
 [ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="1_rub2n"]
 [ext_resource type="Script" path="res://scripts/menus/Exit.gd" id="2_1llhg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/util/ParallaxBackground.gd" id="3_hb75b"]
 [ext_resource type="Texture2D" uid="uid://c23q5fcrwtv7m" path="res://assets/textures/environment/exterior-parallaxBG1.png" id="3_pvwf1"]
 [ext_resource type="Texture2D" uid="uid://cp46rcodsa73f" path="res://assets/textures/environment/exterior-parallaxBG2.png" id="4_6fbj0"]
+[ext_resource type="Texture2D" uid="uid://drg6tiqmgu4ra" path="res://assets/textures/environment/2d_lights_and_shadows_neutral_point_light.webp" id="7_dvrav"]
 
 [sub_resource type="GDScript" id="GDScript_6ymms"]
 
@@ -34,7 +35,7 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rub2n")
 theme_override_font_sizes/font_size = 100
-text = "Poison Craft"
+text = "Poisoned Power"
 
 [node name="Start" type="LinkButton" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 100)
@@ -80,6 +81,11 @@ modulate = Color(0.858824, 0.858824, 0.858824, 1)
 position = Vector2(1021, 613)
 scale = Vector2(4, 4)
 texture = ExtResource("4_6fbj0")
+
+[node name="PointLight2D" type="PointLight2D" parent="ParallaxBackground/ParallaxLayer2/Sprite2D"]
+position = Vector2(2.75, -87)
+energy = 0.0
+texture = ExtResource("7_dvrav")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]

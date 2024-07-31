@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://voojpmdy0eim"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Recipe.gd" id="1_4loho"]
+
+[resource]
+script = ExtResource("1_4loho")
+ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([])
+effect = ""

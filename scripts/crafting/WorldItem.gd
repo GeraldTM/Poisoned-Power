@@ -21,13 +21,14 @@ func set_item(new_item:Item):
 	item = new_item
 	$Sprite2D.set_texture(load(item.texture_path))
 	$Shadow.set_texture(load(item.texture_path))
+	show()
 
 func _process(_delta):
 	if is_mouse_entered  && !follow_mouse:
 		$Shadow.show()
 	else:
 		$Shadow.hide()
-	if Input.is_action_pressed("mouse_click"):
+	if Input.is_action_just_pressed("mouse_click"):
 		if !follow_mouse&& is_mouse_entered:
 			item_clicked.emit(item)
 			queue_free()

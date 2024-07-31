@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch6f4h8eu8ohx"
-path="res://.godot/imported/testitem3.png-bc80a59e2dc58a3d0a3ba1201ee42b61.ctex"
+uid="uid://bmpva0ovox8vk"
+path="res://.godot/imported/wasabi.png-21ed68d1a4a76cb139de254a22d5ff88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/items/testitem3.png"
-dest_files=["res://.godot/imported/testitem3.png-bc80a59e2dc58a3d0a3ba1201ee42b61.ctex"]
+source_file="res://assets/textures/items/wasabi.png"
+dest_files=["res://.godot/imported/wasabi.png-21ed68d1a4a76cb139de254a22d5ff88.ctex"]
 
 [params]
 

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ogyxotjsnor0"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_csgko"]
+
+[resource]
+script = ExtResource("1_csgko")
+name = "Cabbage"
+flavour_type = 0
+flavour_value = 1.5
+texture_path = "res://assets/textures/items/cabbage.png"

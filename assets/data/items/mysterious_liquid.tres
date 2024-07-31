@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://h4lr2ooo0i8l"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_o3p84"]
+
+[resource]
+script = ExtResource("1_o3p84")
+name = "Mysterious Liquid"
+flavour_type = 2
+flavour_value = 5.0
+texture_path = "res://assets/textures/items/mysteriousliquid.png"

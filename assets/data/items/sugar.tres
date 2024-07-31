@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cif6xkvuk2jay"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_b2e2i"]
+
+[resource]
+script = ExtResource("1_b2e2i")
+name = "Sugar"
+flavour_type = 1
+flavour_value = 3.0
+texture_path = "res://assets/textures/items/sugar.png"

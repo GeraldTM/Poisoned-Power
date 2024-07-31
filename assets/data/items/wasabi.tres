@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://nmuh7mnh7y50"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_uq76g"]
+
+[resource]
+script = ExtResource("1_uq76g")
+name = "Wasabi"
+flavour_type = 3
+flavour_value = 5.0
+texture_path = "res://assets/textures/items/wasabi.png"

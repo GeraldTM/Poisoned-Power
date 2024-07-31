@@ -24,6 +24,7 @@ func _ready():
 	await get_tree().process_frame;await get_tree().process_frame
 	dialogue = preload("res://assets/scenes/dialogue.tscn").instantiate()
 	%UI.add_child(dialogue)
+	await %PathFollow2D.select_victim()
 	dialogue.new_dialogue_from_string("That is... as long as your food is good... and of course, always check your recipies for poison by feeding it to the...")
 	await dialogue.closed
 	await get_tree().process_frame;await get_tree().process_frame

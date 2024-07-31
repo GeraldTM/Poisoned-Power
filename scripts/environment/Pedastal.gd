@@ -27,3 +27,7 @@ func _on_body_exited(body):
 	if body == %Player:
 		is_player_entered = false
 		$Hover.hide()
+
+
+func _on_path_follow_2d_meal_taken():
+	$Sprite2D2.hide()

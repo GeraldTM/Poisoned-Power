@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bi6ltps6dbgt5"]
+
+[ext_resource type="Script" path="res://scripts/crafting/Item.gd" id="1_xkhui"]
+
+[resource]
+script = ExtResource("1_xkhui")
+name = "Watermelon"
+flavour_type = 1
+flavour_value = 2.0
+texture_path = "res://assets/textures/items/watermelon.png"
