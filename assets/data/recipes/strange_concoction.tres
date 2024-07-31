@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://d3ojpdg2y76gv"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=4 format=3 uid="uid://d3ojpdg2y76gv"]
 
+[ext_resource type="Resource" uid="uid://o2si8vvqbib7" path="res://assets/data/items/heat.tres" id="1_2doqi"]
 [ext_resource type="Script" path="res://scripts/crafting/Recipe.gd" id="1_ihldy"]
+[ext_resource type="Resource" uid="uid://h4lr2ooo0i8l" path="res://assets/data/items/mysterious_liquid.tres" id="2_jehe3"]
 
 [resource]
 script = ExtResource("1_ihldy")
-ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([])
-effect = ""
+ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([ExtResource("1_2doqi"), ExtResource("2_jehe3")])
+effect = "Catastrophic Brain Failure"

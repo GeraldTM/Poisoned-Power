@@ -9,6 +9,7 @@ static func get_recipes() -> Array[Recipe]:
 	var recipies:Array[Recipe] = []
 	var files = ResourceLoad.get_all_file_paths("res://assets/data/recipes/") 
 	for file in files:
+		print(file)
 		recipies.append(load(file))
 	return recipies
 

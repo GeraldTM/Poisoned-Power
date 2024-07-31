@@ -1,8 +1,20 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://b6e1msi4o7plr"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=14 format=3 uid="uid://b6e1msi4o7plr"]
 
+[ext_resource type="Resource" uid="uid://e6gx47mbi416" path="res://assets/data/items/apple.tres" id="1_1ar40"]
 [ext_resource type="Script" path="res://scripts/crafting/Recipe.gd" id="1_olntk"]
+[ext_resource type="Resource" uid="uid://x18ynkbmsqqt" path="res://assets/data/items/bun.tres" id="2_5ftl0"]
+[ext_resource type="Resource" uid="uid://ogyxotjsnor0" path="res://assets/data/items/cabbage.tres" id="3_dx1c6"]
+[ext_resource type="Resource" uid="uid://d1xvhganakee4" path="res://assets/data/items/grapes.tres" id="4_2u7bh"]
+[ext_resource type="Resource" uid="uid://6qc5nonqwos" path="res://assets/data/items/green_mushroom.tres" id="5_sss5s"]
+[ext_resource type="Resource" uid="uid://h4lr2ooo0i8l" path="res://assets/data/items/mysterious_liquid.tres" id="6_gexk8"]
+[ext_resource type="Resource" uid="uid://ck7hjuysnlw01" path="res://assets/data/items/orange_mushroom.tres" id="7_kvsbl"]
+[ext_resource type="Resource" uid="uid://d1orgyyp6gyhm" path="res://assets/data/items/red_mushroom.tres" id="8_x2uaf"]
+[ext_resource type="Resource" uid="uid://cif6xkvuk2jay" path="res://assets/data/items/sugar.tres" id="9_q6v5v"]
+[ext_resource type="Resource" uid="uid://nmuh7mnh7y50" path="res://assets/data/items/wasabi.tres" id="10_8abfu"]
+[ext_resource type="Resource" uid="uid://bi6ltps6dbgt5" path="res://assets/data/items/watermelon.tres" id="11_t78dd"]
+[ext_resource type="Resource" uid="uid://dopr5i31b1wnk" path="res://assets/data/items/cherries.tres" id="12_1nnbd"]
 
 [resource]
 script = ExtResource("1_olntk")
-ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([])
-effect = ""
+ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([ExtResource("1_1ar40"), ExtResource("2_5ftl0"), ExtResource("3_dx1c6"), ExtResource("4_2u7bh"), ExtResource("5_sss5s"), ExtResource("6_gexk8"), ExtResource("7_kvsbl"), ExtResource("8_x2uaf"), ExtResource("9_q6v5v"), ExtResource("10_8abfu"), ExtResource("11_t78dd"), ExtResource("12_1nnbd")])
+effect = "Digestive Tract Failure"

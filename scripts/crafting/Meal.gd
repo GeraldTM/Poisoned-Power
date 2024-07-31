@@ -29,12 +29,14 @@ func get_ingredients() -> Array[Item]:
 	return ingredients
 
 func get_used_recipe() -> Recipe:
+	print(used_recipe.effect)
 	return used_recipe
 
 func contains_recipe() -> bool:
 	recipes = Recipe.get_recipes()
 	for recipe in recipes:
 		var valid_items = 0
+		print(recipe.effect)
 		for item in recipe.get_ingredients():
 			if ingredients.has(item):
 				valid_items += 1

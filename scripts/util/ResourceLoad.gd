@@ -6,9 +6,9 @@ static func get_all_file_paths(path: String) -> Array[String]:
 	var dir = DirAccess.open(path)  
 
 	dir.list_dir_begin()  
-	var file_name = dir.get_next().trim_suffix('.remap')
+	var file_name = dir.get_next()
 	while file_name != "":  
-		var file_path = path + "/" + file_name  
+		var file_path = path + "/" + file_name.trim_suffix('.remap')  
 		if dir.current_is_dir():  
 			file_paths += get_all_file_paths(file_path)  
 		else:  

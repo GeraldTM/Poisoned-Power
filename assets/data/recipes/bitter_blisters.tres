@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://voojpmdy0eim"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://voojpmdy0eim"]
 
 [ext_resource type="Script" path="res://scripts/crafting/Recipe.gd" id="1_4loho"]
+[ext_resource type="Resource" uid="uid://j5o57i6gr5ky" path="res://assets/data/items/liquid.tres" id="1_xlq05"]
+[ext_resource type="Resource" uid="uid://6qc5nonqwos" path="res://assets/data/items/green_mushroom.tres" id="2_hag16"]
+[ext_resource type="Resource" uid="uid://h4lr2ooo0i8l" path="res://assets/data/items/mysterious_liquid.tres" id="3_bx4ts"]
+[ext_resource type="Resource" uid="uid://d1xvhganakee4" path="res://assets/data/items/grapes.tres" id="4_m4rer"]
 
 [resource]
 script = ExtResource("1_4loho")
-ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([])
-effect = ""
+ingredients = Array[Resource("res://scripts/crafting/Item.gd")]([ExtResource("1_xlq05"), ExtResource("2_hag16"), ExtResource("3_bx4ts"), ExtResource("4_m4rer")])
+effect = "Bitter Blisters"
