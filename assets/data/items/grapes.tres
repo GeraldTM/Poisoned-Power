@@ -8,3 +8,4 @@ name = "Grapes"
 flavour_type = 2
 flavour_value = 2.5
 texture_path = "res://assets/textures/items/grapes.png"
+description = "Sour Grapes. Why do you have these?"

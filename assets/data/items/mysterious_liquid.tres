@@ -8,3 +8,4 @@ name = "Mysterious Liquid"
 flavour_type = 2
 flavour_value = 5.0
 texture_path = "res://assets/textures/items/mysteriousliquid.png"
+description = "A liquid with a distinctly sour taste... when heated, it causes some strange interaction that is not quite understood."

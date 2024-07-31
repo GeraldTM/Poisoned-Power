@@ -8,3 +8,4 @@ name = "Watermelon"
 flavour_type = 1
 flavour_value = 2.0
 texture_path = "res://assets/textures/items/watermelon.png"
+description = "A sweet fruit that is 92% water"

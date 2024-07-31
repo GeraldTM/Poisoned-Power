@@ -8,3 +8,4 @@ name = "Wasabi"
 flavour_type = 3
 flavour_value = 5.0
 texture_path = "res://assets/textures/items/wasabi.png"
+description = "An plant that, when eaten has a VERRY sharp spicy sensation"

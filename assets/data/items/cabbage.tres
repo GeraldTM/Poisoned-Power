@@ -8,3 +8,4 @@ name = "Cabbage"
 flavour_type = 0
 flavour_value = 1.5
 texture_path = "res://assets/textures/items/cabbage.png"
+description = "Need I say more"

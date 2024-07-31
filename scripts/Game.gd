@@ -19,6 +19,11 @@ func _ready():
 	await get_tree().process_frame;await get_tree().process_frame
 	dialogue = preload("res://assets/scenes/dialogue.tscn").instantiate()
 	%UI.add_child(dialogue)
+	dialogue.new_dialogue_from_string("You can create meals by either mixing ingredients in the pot or roasting them over the fire, Use as many ingredients as you want")
+	await dialogue.closed
+	await get_tree().process_frame;await get_tree().process_frame
+	dialogue = preload("res://assets/scenes/dialogue.tscn").instantiate()
+	%UI.add_child(dialogue)
 	dialogue.new_dialogue_from_string("Ill come right here to pick it up around then, so be sure to put a decent meal on the counter here")
 	await dialogue.closed
 	await get_tree().process_frame;await get_tree().process_frame

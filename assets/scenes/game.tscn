@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://drpa3d2e322g0"]
+[gd_scene load_steps=122 format=3 uid="uid://drpa3d2e322g0"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_xx0jj"]
 [ext_resource type="Script" path="res://scripts/Player.gd" id="2_grpak"]
@@ -41,17 +41,19 @@
 [ext_resource type="Script" path="res://scripts/TheBirb.gd" id="28_r27vi"]
 [ext_resource type="Script" path="res://scripts/util/Time.gd" id="28_w6f5n"]
 [ext_resource type="Texture2D" uid="uid://c4ajocdr3sx8y" path="res://assets/textures/environment/birdcage.png" id="29_2rx0n"]
+[ext_resource type="Script" path="res://scripts/BedsideStand.gd" id="33_5nusl"]
+[ext_resource type="Texture2D" uid="uid://dcqhsthlojif5" path="res://assets/textures/environment/bedside_table.png" id="33_j4nm1"]
 [ext_resource type="Resource" uid="uid://h4lr2ooo0i8l" path="res://assets/data/items/mysterious_liquid.tres" id="38_b81wg"]
 [ext_resource type="Texture2D" uid="uid://crk1acajlepk2" path="res://assets/textures/environment/glass.png" id="38_f5g43"]
 [ext_resource type="Resource" uid="uid://ogyxotjsnor0" path="res://assets/data/items/cabbage.tres" id="39_4gw4q"]
 [ext_resource type="Resource" uid="uid://6qc5nonqwos" path="res://assets/data/items/green_mushroom.tres" id="40_a3yj4"]
-[ext_resource type="Script" path="res://assets/scenes/PathFollow2D.gd" id="41_4kj4v"]
 [ext_resource type="Texture2D" uid="uid://gudvxg7dlltc" path="res://assets/textures/master_chef.png" id="41_4840r"]
 [ext_resource type="Resource" uid="uid://x18ynkbmsqqt" path="res://assets/data/items/bun.tres" id="41_kkuri"]
 [ext_resource type="Resource" uid="uid://e6gx47mbi416" path="res://assets/data/items/apple.tres" id="42_p1bnb"]
 [ext_resource type="Resource" uid="uid://cif6xkvuk2jay" path="res://assets/data/items/sugar.tres" id="43_d4efh"]
 [ext_resource type="Resource" uid="uid://nmuh7mnh7y50" path="res://assets/data/items/wasabi.tres" id="44_m57kj"]
 [ext_resource type="Resource" uid="uid://bi6ltps6dbgt5" path="res://assets/data/items/watermelon.tres" id="45_pip5e"]
+[ext_resource type="Script" path="res://scripts/PathFollow2D.gd" id="53_ha3j3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opn3x"]
 atlas = ExtResource("3_vve8o")
@@ -5926,13 +5928,16 @@ size = Vector2(33, 33)
 size = Vector2(42, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chgqu"]
-size = Vector2(71, 20)
+size = Vector2(60.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omw3e"]
 size = Vector2(47, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i35q7"]
-size = Vector2(22, 43)
+size = Vector2(14, 40.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsapi"]
+size = Vector2(27, 20)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i5i82"]
 
@@ -12047,6 +12052,7 @@ rotation = -0.888373
 scale = Vector2(2, 2)
 
 [node name="Hover" type="AnimatedSprite2D" parent="Stove"]
+visible = false
 modulate = Color(100, 100, 100, 0.5)
 z_index = -1
 texture_filter = 6
@@ -12126,7 +12132,7 @@ collision_mask = 18
 script = ExtResource("20_hwwnk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bed"]
-position = Vector2(12, -10)
+position = Vector2(17.25, -10)
 shape = SubResource("RectangleShape2D_chgqu")
 
 [node name="Hover" type="Sprite2D" parent="Bed"]
@@ -12179,18 +12185,41 @@ script = ExtResource("28_r27vi")
 visible = false
 modulate = Color(100, 100, 100, 1)
 texture_filter = 6
-position = Vector2(249, -21)
+position = Vector2(240, -21)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("29_2rx0n")
 
 [node name="Sprite2D" type="Sprite2D" parent="TheBirb"]
-position = Vector2(249, -20)
+position = Vector2(240, -20)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("29_2rx0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheBirb"]
-position = Vector2(249, 1.5)
+position = Vector2(236, -5)
 shape = SubResource("RectangleShape2D_i35q7")
+
+[node name="BedsideStand" type="Area2D" parent="."]
+position = Vector2(-298, -29)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("33_5nusl")
+
+[node name="Hover" type="Sprite2D" parent="BedsideStand"]
+visible = false
+modulate = Color(100, 100, 100, 1)
+texture_filter = 6
+position = Vector2(261, 19)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("33_j4nm1")
+
+[node name="Sprite2D" type="Sprite2D" parent="BedsideStand"]
+position = Vector2(261, 19)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("33_j4nm1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BedsideStand"]
+position = Vector2(267.5, 19)
+shape = SubResource("RectangleShape2D_vsapi")
 
 [node name="Foreground" type="Node2D" parent="."]
 
@@ -12336,7 +12365,7 @@ unique_name_in_owner = true
 position = Vector2(233.842, -1)
 progress = 232.841
 loop = false
-script = ExtResource("41_4kj4v")
+script = ExtResource("53_ha3j3")
 multiplier = 0.1
 
 [node name="MasterChef" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
@@ -12380,6 +12409,8 @@ shape = SubResource("RectangleShape2D_lvqhr")
 [connection signal="body_entered" from="TheBirb" to="TheBirb" method="_on_body_entered"]
 [connection signal="body_exited" from="TheBirb" to="TheBirb" method="_on_body_exited"]
 [connection signal="meal_taken" from="TheBirb" to="Player" method="_on_the_birb_meal_taken"]
+[connection signal="body_entered" from="BedsideStand" to="BedsideStand" method="_on_body_entered"]
+[connection signal="body_exited" from="BedsideStand" to="BedsideStand" method="_on_body_exited"]
 [connection signal="body_entered" from="Door Area" to="Door" method="_on_door_area_body_entered"]
 [connection signal="body_exited" from="Door Area" to="Door" method="_on_door_area_body_exited"]
 [connection signal="mouse_entered" from="ValidItemPlacementArea" to="UI/Inventory/ItemList" method="_on_valid_item_placement_area_mouse_entered"]

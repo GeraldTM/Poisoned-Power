@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg4n3l5ucjsoh"]
+
+[ext_resource type="Texture2D" uid="uid://clg2rapqvxi2y" path="res://assets/textures/ui/Transparent center/panel-transparent-center-025.png" id="1_8td7c"]
+[ext_resource type="Texture2D" uid="uid://cffx65fbucc34" path="res://assets/textures/items/apple.png" id="1_p15pt"]
+[ext_resource type="Script" path="res://scripts/menus/RecipeBook.gd" id="2_8uch6"]
+[ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="2_o6fnk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgad3"]
+atlas = ExtResource("1_8td7c")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r5dw7"]
+texture = SubResource("AtlasTexture_pgad3")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_i1htu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fl06o"]
+
+[node name="RecipeBook" type="Panel"]
+texture_filter = 1
+offset_left = 150.0
+offset_top = 150.0
+offset_right = 1770.0
+offset_bottom = 930.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_r5dw7")
+script = ExtResource("2_8uch6")
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1520, 680)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1570.0
+offset_bottom = 730.0
+alignment = 1
+
+[node name="Title" type="Label" parent="Vbox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o6fnk")
+theme_override_font_sizes/font_size = 80
+text = "Apple"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="Vbox/HBoxContainer2"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme = SubResource("Theme_i1htu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fl06o")
+
+[node name="PanelContainer" type="GridContainer" parent="Vbox/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Vbox/HBoxContainer2/PanelContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("1_p15pt")
+expand_mode = 3
+
+[node name="Description" type="Label" parent="Vbox/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_o6fnk")
+theme_override_font_sizes/font_size = 30
+text = "Apple: A sweet treat"
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Vbox"]
+layout_mode = 2
+
+[node name="Back" type="LinkButton" parent="Vbox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_o6fnk")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+underline = 1
+
+[node name="Exit" type="LinkButton" parent="Vbox/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_o6fnk")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+underline = 1
+
+[node name="Front" type="LinkButton" parent="Vbox/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_o6fnk")
+theme_override_font_sizes/font_size = 40
+text = "Next"
+underline = 1
+
+[connection signal="pressed" from="Vbox/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Vbox/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Vbox/HBoxContainer/Front" to="." method="_on_front_pressed"]

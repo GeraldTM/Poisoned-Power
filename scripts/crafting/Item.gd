@@ -7,6 +7,7 @@ enum Flavour {savoury, sweet, sour, spicy, other}
 @export var flavour_type:Flavour
 @export_range(0,5) var flavour_value:float
 @export_file("*.png") var texture_path:String
+@export var description:String
 
 func get_item_name() -> String:
 	return name

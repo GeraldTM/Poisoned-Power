@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_fpq6o")
-name = "Green Mushroom"
+name = "Sour Mushroom"
 flavour_type = 2
 flavour_value = 1.75
 texture_path = "res://assets/textures/items/mushroom_green.png"
+description = "A Sour Mushroom. if mixed with other sour things, it tends to cause blistering"

@@ -8,3 +8,4 @@ name = "Bun"
 flavour_type = 0
 flavour_value = 5.0
 texture_path = "res://assets/textures/items/bun.png"
+description = "A Sweet fruit, said to make one healthier and smarter every bite"

@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_mgum3")
-name = "Red Mushroom"
+name = "Spicy Mushroom"
 flavour_type = 3
 flavour_value = 1.0
 texture_path = "res://assets/textures/items/mushroom_red.png"
+description = "A mildly spicy mushroom that seems to multiply the spice level when combined with other spices"

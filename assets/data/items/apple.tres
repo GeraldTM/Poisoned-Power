@@ -8,3 +8,4 @@ name = "Apple"
 flavour_type = 1
 flavour_value = 3.0
 texture_path = "res://assets/textures/items/apple.png"
+description = "A Sweet fruit, said to make one healthier and smarter every bite"

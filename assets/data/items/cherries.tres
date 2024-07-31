@@ -8,3 +8,4 @@ name = "Cherries"
 flavour_type = 1
 flavour_value = 4.0
 texture_path = "res://assets/textures/items/cherries.png"
+description = "Sweet fruit"

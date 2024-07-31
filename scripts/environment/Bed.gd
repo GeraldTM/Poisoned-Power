@@ -31,7 +31,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body == %Player && %Time.time_ratio >= 0.7: 
+	if body == %Player && %Time.time_ratio >= 0.8: 
 		can_sleep = true
 
 

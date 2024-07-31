@@ -31,7 +31,7 @@ func start():
 
 func bad_ending(message:String):
 	await Fade.fade_out().finished
-	get_tree().change_scene_to_file("res://assets/scenes/story_page.tscn")
+	get_tree().change_scene_to_packed(preload("res://assets/scenes/story_page.tscn"))
 	await get_tree().process_frame
 	scene = get_tree().get_current_scene()
 	scene.create_dialogue( "YOU FAILED \n \n" + message)

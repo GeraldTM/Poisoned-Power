@@ -2,7 +2,7 @@ extends FoodTaster
 
 var is_player_entered:bool
 var contents:Meal
-signal meal_taken()
+signal meal_taken
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

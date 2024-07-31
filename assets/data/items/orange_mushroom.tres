@@ -4,7 +4,8 @@
 
 [resource]
 script = ExtResource("1_c2m6k")
-name = "Orange Mushroom"
+name = "Savoury Mushroom"
 flavour_type = 0
 flavour_value = 3.0
 texture_path = "res://assets/textures/items/mushroom_orange.png"
+description = "A common and delightful mushroom that does NOT go well with wasabi"
