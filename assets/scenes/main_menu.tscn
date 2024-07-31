@@ -48,6 +48,7 @@ underline = 1
 script = ExtResource("2_cljhk")
 
 [node name="Credits" type="LinkButton" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rub2n")
 theme_override_font_sizes/font_size = 75

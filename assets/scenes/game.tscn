@@ -12362,7 +12362,7 @@ curve = SubResource("Curve2D_mr3kh")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(233.842, -1)
+position = Vector2(233.843, -1)
 progress = 232.841
 loop = false
 script = ExtResource("53_ha3j3")
