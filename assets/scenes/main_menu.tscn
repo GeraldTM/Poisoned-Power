@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cfbvo5naaoasa"]
+[gd_scene load_steps=12 format=3 uid="uid://cfbvo5naaoasa"]
 
 [ext_resource type="FontFile" uid="uid://c34eu6anivhls" path="res://assets/data/fonts/alagard_by_pix3m-d6awiwp.ttf" id="1_rub2n"]
 [ext_resource type="Script" path="res://scripts/menus/Exit.gd" id="2_1llhg"]
 [ext_resource type="Script" path="res://scripts/Start.gd" id="2_cljhk"]
+[ext_resource type="Script" path="res://assets/scenes/Credits.gd" id="3_74mg3"]
 [ext_resource type="Script" path="res://scripts/util/ParallaxBackground.gd" id="3_hb75b"]
 [ext_resource type="Texture2D" uid="uid://c23q5fcrwtv7m" path="res://assets/textures/environment/exterior-parallaxBG1.png" id="3_pvwf1"]
 [ext_resource type="Texture2D" uid="uid://cp46rcodsa73f" path="res://assets/textures/environment/exterior-parallaxBG2.png" id="4_6fbj0"]
@@ -46,6 +47,14 @@ text = "Start"
 underline = 1
 script = ExtResource("2_cljhk")
 
+[node name="Credits" type="LinkButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rub2n")
+theme_override_font_sizes/font_size = 75
+text = "Credits"
+underline = 1
+script = ExtResource("3_74mg3")
+
 [node name="Exit" type="LinkButton" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_rub2n")
@@ -87,5 +96,26 @@ position = Vector2(2.75, -87)
 energy = 0.0
 texture = ExtResource("7_dvrav")
 
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -879.0
+offset_bottom = 151.0
+grow_horizontal = 0
+scale = Vector2(1, 0.958)
+theme_override_fonts/font = ExtResource("1_rub2n")
+theme_override_font_sizes/font_size = 20
+text = "Kenny.nl: Ui artwork (asset pack) https://kenney.nl/assets/fantasy-ui-borders
+Jetrel: Background artwork (asset pack) https://opengameart.org/content/castle-platformer
+Crumpalloo: Whimsy Hallow Asset Pack https://crumpaloo.itch.io/whimsy-hallow
+Pix3M: Alagard font https://opengameart.org/content/pixel-fonts-by-pix3m
+MapleMaggie: Proofreading
+ecaroh.games: Web resource loading fix
+Legomonster33: QA"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="VBoxContainer/Start" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer/Credits" method="_on_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_pressed"]
